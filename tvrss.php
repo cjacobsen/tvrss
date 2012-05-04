@@ -28,9 +28,6 @@ foreach($series as $feed => $serie) {
 	file_put_contents('rss/'.$feed.'.xml', render($serie, $episodes));
 }
 
-//Sync
-`lftp -u jacobsen_cl-ftp,cpe1704t -e "mirror -R /home/wawi/public_html/tv_parser/rss /web/rss" www.jacobsen.cl`;
-
 //==============================================
 
 function parse($serie) {
